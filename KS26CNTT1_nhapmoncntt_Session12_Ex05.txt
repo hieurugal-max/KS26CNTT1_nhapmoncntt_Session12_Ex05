@@ -1,0 +1,39 @@
+Phần 1. Phân tích: 
+
+Truy vấn từ khóa tại chỗ: Cho phép trích xuất ngay lập tức các dòng dữ liệu thỏa mãn điều kiện (như tìm kiếm mã cảnh báo CRITICAL hoặc tên thiết bị bị nhiễm độc) từ hàng nghìn dòng dữ liệu thô mà không cần viết câu lệnh phức tạp.
+
+Lọc bỏ nhiễu thông tin: Tương tự như việc thu hẹp kết quả tìm kiếm trên Google, AutoFilter ẩn đi các dữ liệu không liên quan, giúp người quản trị tập trung hoàn toàn vào các sự cố an ninh mạng cần xử lý khẩn cấp.
+
+Phần 2. Triển khai: Báo cáo NetGuard hoàn chỉnh
+
+-  =VLOOKUP(TRIM(A2), 'Cơ sở dữ liệu virus'!$A$2:$B$100, 2, FALSE)
+
+TRIM(A2): Làm sạch mã nhận diện mã độc bằng cách loại bỏ mọi khoảng trắng thừa trước và sau chuỗi.
+
+'Cơ sở dữ liệu virus'!$A$2:$B$100: Vùng tham chiếu cố định chứa danh mục mã độc.
+
+-   Trả về giá trị ở cột thứ hai trong vùng tra cứu (Tên mã độc).
+
+FALSE: Bắt buộc khớp chính xác tuyệt đối mã độc
+
+- Thiết lập mục lục tự động (Auto TOC) trên Word
+Để báo cáo an ninh tự động cập nhật số trang khi tài liệu phình lớn lên hàng chục trang:
+
+Bước 1: Gán định dạng kiểu chữ cho các đề mục trong văn bản sử dụng tính năng Styles (Heading 1 cho tên chương/phần lớn, Heading 2 cho mục nhỏ hơn)
+
+Bước 2: Đặt con trỏ chuột tại vị trí cần đặt mục lục (thường là trang 2 hoặc 3)
+
+Bước 3: Vào tab References > chọn Table of Contents > chọn Automatic Table 1
+
+Cập nhật: Khi chỉnh sửa làm thay đổi số trang, chỉ cần nhấp chuột phải vào bảng mục lục, chọn Update Field > Update entire table.
+
+3. Sơ đồ Chiến lược Phòng thủ 3 tầng trên PowerPoint
+Quy tắc định dạng Slide: Tuyệt đối không dùng font Times New Roman. Sử dụng Montserrat hoặc Inter cho toàn bộ tiêu đề và nội dung để hiển thị sắc nét, dễ đọc trên máy chiếu (Projector)
+
+Cấu trúc sơ đồ phân cấp phòng thủ NetGuard:
+
+Tầng 1 (Perimeter - Vành đai mạng): Tường lửa (Firewall), hệ thống phát hiện/ngăn chặn xâm nhập (IDS/IPS) chặn lưu lượng độc hại từ ngoài Internet.
+
+Tầng 2 (Endpoint - Thiết bị đầu cuối): Giải pháp EDR, Antivirus giám sát hành vi trên từng máy trạm và máy chủ nội bộ.
+
+Tầng 3 (Data & Core - Dữ liệu cốt lõi): Phân quyền truy cập tối thiểu, mã hóa dữ liệu nhạy cảm và hệ thống giám sát nhật ký tập trung (SIEM)
